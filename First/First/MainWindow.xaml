@@ -1,0 +1,38 @@
+﻿<Window x:Class="First.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:First"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="534">
+    
+    <Grid ShowGridLines="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <WrapPanel  >
+            <Button x:Name="Navy" Content="Navy" Height="20" Margin="2"/>
+            <Button x:Name="Blue" Content="Blue" Height="20" Margin="2"/>
+        <Button x:Name="Aqua" Content="Blue" Height="20" Margin="2"/>
+        <Button x:Name="Teal" Content="Blue" Height="20" Margin="2"/>
+        <Button x:Name="Olive" Content="Blue" Height="20" Margin="2"/>
+        <Button x:Name="Green" Content="Blue" Height="20" Margin="2"/>
+        <Button x:Name="Lime" Content="Blue" Height="20" Margin="2"/>
+        <Button x:Name="Yellow" Content="Blue" Height="20" Margin="2"/>
+        <Button x:Name="Orange" Content="Blue" Height="20" Margin="2"/>
+        <Button x:Name="Red" Content="Blue" Height="20" Margin="2"/>
+        <Button x:Name="Maroond" Content="Blue" Height="20" Margin="2"/>
+        <Button x:Name="Fuchsia" Content="Blue" Height="20" Margin="2"/>
+        <Button x:Name="Purple" Content="Blue" Height="20" Margin="2"/>
+        <Button x:Name="Black" Content="Blue" Height="20" Margin="2"/>
+        <Button x:Name="Silver" Content="Blue" Height="20" Margin="2"/>
+        <Button x:Name="Gray" Content="Blue" Height="20" Margin="2"/>
+        <Button x:Name="White" Content="Blue" Height="20" Margin="2"/>
+
+            </WrapPanel>
+            
+       
+    </Grid>
+</Window>

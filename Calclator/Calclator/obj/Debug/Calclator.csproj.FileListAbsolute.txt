@@ -1,0 +1,15 @@
+C:\Users\Рома\Desktop\Step\WPF\Calclator\Calclator\bin\Debug\Calclator.exe.config
+C:\Users\Рома\Desktop\Step\WPF\Calclator\Calclator\bin\Debug\Calclator.exe
+C:\Users\Рома\Desktop\Step\WPF\Calclator\Calclator\bin\Debug\Calclator.pdb
+C:\Users\Рома\Desktop\Step\WPF\Calclator\Calclator\obj\Debug\Calclator.csprojAssemblyReference.cache
+C:\Users\Рома\Desktop\Step\WPF\Calclator\Calclator\obj\Debug\MainWindow.g.cs
+C:\Users\Рома\Desktop\Step\WPF\Calclator\Calclator\obj\Debug\App.g.cs
+C:\Users\Рома\Desktop\Step\WPF\Calclator\Calclator\obj\Debug\Calclator_MarkupCompile.cache
+C:\Users\Рома\Desktop\Step\WPF\Calclator\Calclator\obj\Debug\Calclator_MarkupCompile.lref
+C:\Users\Рома\Desktop\Step\WPF\Calclator\Calclator\obj\Debug\MainWindow.baml
+C:\Users\Рома\Desktop\Step\WPF\Calclator\Calclator\obj\Debug\Calclator.g.resources
+C:\Users\Рома\Desktop\Step\WPF\Calclator\Calclator\obj\Debug\Calclator.Properties.Resources.resources
+C:\Users\Рома\Desktop\Step\WPF\Calclator\Calclator\obj\Debug\Calclator.csproj.GenerateResource.cache
+C:\Users\Рома\Desktop\Step\WPF\Calclator\Calclator\obj\Debug\Calclator.csproj.CoreCompileInputs.cache
+C:\Users\Рома\Desktop\Step\WPF\Calclator\Calclator\obj\Debug\Calclator.exe
+C:\Users\Рома\Desktop\Step\WPF\Calclator\Calclator\obj\Debug\Calclator.pdb

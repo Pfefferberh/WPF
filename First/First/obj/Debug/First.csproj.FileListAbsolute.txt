@@ -1,0 +1,15 @@
+C:\Users\Рома\Desktop\Step\WPF\First\First\bin\Debug\First.exe.config
+C:\Users\Рома\Desktop\Step\WPF\First\First\bin\Debug\First.exe
+C:\Users\Рома\Desktop\Step\WPF\First\First\bin\Debug\First.pdb
+C:\Users\Рома\Desktop\Step\WPF\First\First\obj\Debug\First.csprojAssemblyReference.cache
+C:\Users\Рома\Desktop\Step\WPF\First\First\obj\Debug\MainWindow.g.cs
+C:\Users\Рома\Desktop\Step\WPF\First\First\obj\Debug\App.g.cs
+C:\Users\Рома\Desktop\Step\WPF\First\First\obj\Debug\First_MarkupCompile.cache
+C:\Users\Рома\Desktop\Step\WPF\First\First\obj\Debug\First_MarkupCompile.lref
+C:\Users\Рома\Desktop\Step\WPF\First\First\obj\Debug\MainWindow.baml
+C:\Users\Рома\Desktop\Step\WPF\First\First\obj\Debug\First.g.resources
+C:\Users\Рома\Desktop\Step\WPF\First\First\obj\Debug\First.Properties.Resources.resources
+C:\Users\Рома\Desktop\Step\WPF\First\First\obj\Debug\First.csproj.GenerateResource.cache
+C:\Users\Рома\Desktop\Step\WPF\First\First\obj\Debug\First.csproj.CoreCompileInputs.cache
+C:\Users\Рома\Desktop\Step\WPF\First\First\obj\Debug\First.exe
+C:\Users\Рома\Desktop\Step\WPF\First\First\obj\Debug\First.pdb
