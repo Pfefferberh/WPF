@@ -1,0 +1,102 @@
+﻿<Window x:Class="ColorMix.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ColorMix"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="800">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="659*"/>
+            <ColumnDefinition Width="133*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="148*"></RowDefinition>
+            <RowDefinition Height="246*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0" Grid.ColumnSpan="2" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" ></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*" ></ColumnDefinition>
+                    <ColumnDefinition Width="8*" ></ColumnDefinition>
+                    <ColumnDefinition Width="*" ></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <CheckBox Name="CbAlpha" Grid.Row="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Click="CheckBox_Checked">Alpha:</CheckBox>
+                <CheckBox Name="CbRed" Grid.Row="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"   Click="CheckBox_Checked">Red:</CheckBox>
+                <CheckBox Name="CbGreen" Grid.Row="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Click="CheckBox_Checked">Green:</CheckBox>
+                <CheckBox Name="CbBlue" Grid.Row="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"  Click="CheckBox_Checked">Blue:</CheckBox>
+
+                <Label Grid.Row="0"  Grid.Column="1"  Content="{Binding ElementName=SAlpha, Path=Value}"></Label>
+                <Label Grid.Row="1"  Grid.Column="1" Content="{Binding ElementName=SRed, Path=Value}"></Label>
+                <Label Grid.Row="2"  Grid.Column="1" Content="{Binding ElementName=SGreen, Path=Value}"></Label>
+                <Label Grid.Row="3"  Grid.Column="1" Content="{Binding ElementName=SBlue, Path=Value}"></Label>
+
+                <Slider Name="SAlpha" Grid.Row="0" Grid.Column="2" ValueChanged="S_ValueChanged" Minimum="0" Maximum="255"></Slider>
+                <Slider Name="SRed"   Grid.Row="1" Grid.Column="2" ValueChanged="S_ValueChanged" Minimum="0" Maximum="255"></Slider>
+                <Slider Name="SGreen" Grid.Row="2" Grid.Column="2" ValueChanged="S_ValueChanged" Minimum="0" Maximum="255"></Slider>
+                <Slider Name="SBlue"  Grid.Row="3" Grid.Column="2" ValueChanged="S_ValueChanged" Minimum="0" Maximum="255"></Slider>
+                <Button Grid.Row="4" Click="Button_Click">ADD</Button>
+                <Button x:Name="ColBut" Grid.RowSpan="4" Grid.Column="3" Background="White" ></Button>
+            </Grid>
+        </DockPanel>
+        <DockPanel Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" ></ColumnDefinition>
+                    <ColumnDefinition Width="5*" ></ColumnDefinition>
+                    <ColumnDefinition Width="*" ></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Name="LbNam1" Grid.Row="0" Content="f"></Label>
+                <Label Name="LbNam2" Grid.Row="1" Content="f"></Label>
+                <Label Name="LbNam3" Grid.Row="2" Content="f"></Label>
+                <Label Name="LbNam4" Grid.Row="3" Content="f"></Label>
+                <Label Name="LbNam5" Grid.Row="4" Content="f"></Label>
+
+                <Label Name="Lb1" Grid.Row="0" Grid.Column="1" ></Label>
+                <Label Name="Lb2" Grid.Row="1" Grid.Column="1" ></Label>
+                <Label Name="Lb3" Grid.Row="2" Grid.Column="1" ></Label>
+                <Label Name="Lb4" Grid.Row="3" Grid.Column="1" ></Label>
+                <Label Name="Lb5" Grid.Row="4" Grid.Column="1" ></Label>
+
+                <Button Grid.Row="0" Grid.Column="2" Click="Button_Click_Del"  
+                        Tag="{Binding ElementName=LbNam1, Path=Content, Mode=TwoWay}" 
+                        Background="{Binding ElementName=Lb1,Path=Background,Mode=OneWayToSource}"
+                        Content=" DELETE" />
+                <Button Name="BDel2" Grid.Row="1" Grid.Column="2" Click="Button_Click_Del"
+                        Tag="{Binding ElementName=LbNam2, Path=Content, Mode=TwoWay}" 
+                        Background="{Binding ElementName=Lb2,Path=Background,Mode=OneWayToSource}"
+                        Content=" DELETE" />
+                <Button Name="BDel3" Grid.Row="2" Grid.Column="2" Click="Button_Click_Del"
+                        Tag="{Binding ElementName=LbNam3, Path=Content, Mode=TwoWay}" 
+                        Background="{Binding ElementName=Lb3,Path=Background,Mode=OneWayToSource}"
+                        Content=" DELETE" />
+                <Button Name="BDel4" Grid.Row="3" Grid.Column="2" Click="Button_Click_Del"
+                        Tag="{Binding ElementName=LbNam4, Path=Content, Mode=TwoWay}" 
+                        Background="{Binding ElementName=Lb4,Path=Background,Mode=OneWayToSource}"
+                        Content=" DELETE" />
+                <Button Name="BDel5" Grid.Row="4" Grid.Column="2" Click="Button_Click_Del"
+                        Tag="{Binding ElementName=LbNam5, Path=Content, Mode=TwoWay}" 
+                        Background="{Binding ElementName=Lb5,Path=Background,Mode=OneWayToSource}"
+                        Content=" DELETE" />
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Window>

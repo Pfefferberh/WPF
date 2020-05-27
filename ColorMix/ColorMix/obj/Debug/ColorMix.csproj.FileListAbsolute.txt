@@ -1,0 +1,15 @@
+C:\Users\Рома\Desktop\Step\WPF\ColorMix\ColorMix\bin\Debug\ColorMix.exe.config
+C:\Users\Рома\Desktop\Step\WPF\ColorMix\ColorMix\bin\Debug\ColorMix.exe
+C:\Users\Рома\Desktop\Step\WPF\ColorMix\ColorMix\bin\Debug\ColorMix.pdb
+C:\Users\Рома\Desktop\Step\WPF\ColorMix\ColorMix\obj\Debug\ColorMix.csprojAssemblyReference.cache
+C:\Users\Рома\Desktop\Step\WPF\ColorMix\ColorMix\obj\Debug\MainWindow.g.cs
+C:\Users\Рома\Desktop\Step\WPF\ColorMix\ColorMix\obj\Debug\App.g.cs
+C:\Users\Рома\Desktop\Step\WPF\ColorMix\ColorMix\obj\Debug\ColorMix_MarkupCompile.cache
+C:\Users\Рома\Desktop\Step\WPF\ColorMix\ColorMix\obj\Debug\ColorMix_MarkupCompile.lref
+C:\Users\Рома\Desktop\Step\WPF\ColorMix\ColorMix\obj\Debug\MainWindow.baml
+C:\Users\Рома\Desktop\Step\WPF\ColorMix\ColorMix\obj\Debug\ColorMix.g.resources
+C:\Users\Рома\Desktop\Step\WPF\ColorMix\ColorMix\obj\Debug\ColorMix.Properties.Resources.resources
+C:\Users\Рома\Desktop\Step\WPF\ColorMix\ColorMix\obj\Debug\ColorMix.csproj.GenerateResource.cache
+C:\Users\Рома\Desktop\Step\WPF\ColorMix\ColorMix\obj\Debug\ColorMix.csproj.CoreCompileInputs.cache
+C:\Users\Рома\Desktop\Step\WPF\ColorMix\ColorMix\obj\Debug\ColorMix.exe
+C:\Users\Рома\Desktop\Step\WPF\ColorMix\ColorMix\obj\Debug\ColorMix.pdb
