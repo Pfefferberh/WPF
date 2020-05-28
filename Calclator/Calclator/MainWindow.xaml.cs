@@ -26,21 +26,22 @@ namespace Calclator
         {
             Re_star("");
             EnterExample.Content = "0";
+            restart = false;
         }
         private void C_Click(object sender, RoutedEventArgs e)
         {
-            char perev = EnterExample.Content.ToString().Last();
-            if (perev != '+' && perev != '-' && perev != '*' && perev != '/')
-                bank_num.RemoveAt(bank_num.Count - 1);
-            else
-            {
-                bank_math.RemoveAt(bank_math.Count - 1);
-                kostul = false;
-            }
-            if (EnterExample.Content.ToString().Length > 1)
-            {
-                EnterExample.Content = EnterExample.Content.ToString().Substring(0, EnterExample.Content.ToString().Length - 1);
+            string perev = EnterExample.Content.ToString();
 
+            if (perev.Length > 1)
+            {
+                EnterExample.Content = perev.Substring(0, perev.Length - 1);
+                if (perev.Last() != '+' && perev.Last() != '-' && perev.Last() != '*' && perev.Last() != '/')
+                    bank_num.RemoveAt(bank_num.Count - 1);
+                else
+                {
+                    bank_math.RemoveAt(bank_math.Count - 1);
+                    kostul = false;
+                }
             }
             else
                 EnterExample.Content = "0";
@@ -110,7 +111,7 @@ namespace Calclator
             List<double> vs = new List<double>();
             bank_num.Add(Convert.ToDouble(EnterNum.Content));
             bank_math.Add('=');
-            for (int i = 0; i < bank_math.Count; i++)
+            for (int i = 0; i < bank_math.Count; i++)//цей цикл для обрахунку * та / операцій
             {
                 if (bank_math[i] == '*')
                 {
@@ -129,6 +130,7 @@ namespace Calclator
                 {
                     if (bank_math[i + 1] == '+' || bank_math[i + 1] == '-' || bank_math[i + 1] == '=')
                     {
+                        if (bank_num[j + 1] == 0) { MessageBox.Show("DIVIDE by ZERO!"); CE_Click(null, null); return; } //перевірка ділення на 0
                         vs.Add(bank_num[j] / bank_num[j + 1]);
                         bank_num[j] = vs[o];
                         bank_num.RemoveAt(j + 1);
@@ -140,21 +142,22 @@ namespace Calclator
                 }
                 j++;
             }
+            res = bank_num[0];
             j = 0;
-            for (int i = 0; i < bank_math.Count - 1; i++)
+            for (int i = 1; i < bank_math.Count; i++)//цей цикл для обрахунку решти + та - операцій
             {
-                switch (bank_math[i])
+                switch (bank_math[j])
                 {
                     case '+':
-                        res = bank_num[j] + bank_num[j + 1];
+                        res += bank_num[i];
                         break;
                     case '-':
-                        res = bank_num[j] - bank_num[j + 1];
+                        res -= bank_num[i];
                         break;
                     default:
                         break;
                 }
-                j += 2;
+                j++;
             }
             EnterExample.Content = "";
             EnterNum.Content = "0";
