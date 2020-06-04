@@ -4,7 +4,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         SizeToContent="WidthAndHeight"
         Title="Keyboard Trainer"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        KeyDown="Window_KeyDown" KeyUp="Window_KeyUp">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -14,19 +15,20 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Margin="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1.5*"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Orientation="Horizontal">
                 <TextBlock FontSize="15" Text="Speed: "/>
-                <TextBlock FontSize="15" FontWeight="Bold" Text="0"/>
+                <TextBlock FontSize="15" FontWeight="Bold" Text="0" Name="speedTyping"/>
                 <TextBlock FontSize="15" Text=" chars/min"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Orientation="Horizontal">
                 <TextBlock FontSize="15" Text="Fails: "/>
-                <TextBlock FontSize="15" FontWeight="Bold" Text="0"/>
+                <TextBlock FontSize="15" FontWeight="Bold" Text="0" Name="failsNumber"/>
             </StackPanel>
             <Grid Grid.Column="2">
                 <Grid.ColumnDefinitions>
@@ -35,12 +37,15 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0" Orientation="Horizontal">
                     <TextBlock FontSize="15" Text="Difficulty: "/>
-                    <TextBlock FontSize="15" FontWeight="Bold" Text="0"/>
+                    <TextBlock FontSize="15" FontWeight="Bold" Text="10" Name="difficultyValue"/>
                 </StackPanel>
-                <Slider Grid.Column="1" HorizontalAlignment="Stretch" Margin="10,0,10,0" VerticalAlignment="Center"/>
+                <Slider Grid.Column="1" HorizontalAlignment="Stretch" Margin="10,0,10,0" VerticalAlignment="Center" Width="Auto" Name="difficultySlider" ValueChanged="Slider_ValueChanged" Minimum="1" Maximum="52" Value="10"/>
             </Grid>
-            <Grid Grid.Column="3">
-                <CheckBox FontSize="15" VerticalContentAlignment="Center">Case Sensitive</CheckBox>
+            <Grid Grid.Column="3" HorizontalAlignment="Right">
+                <CheckBox FontSize="15" VerticalContentAlignment="Center" Name="caseSensitive">Case Sensitive</CheckBox>
+            </Grid>
+            <Grid Grid.Column="4" HorizontalAlignment="Right">
+                <CheckBox FontSize="15" VerticalContentAlignment="Center" IsChecked="True" Name="onlyText" HorizontalAlignment="Right" Width="80" Click="OnlyText_Click">Only text</CheckBox>
             </Grid>
         </Grid>
         <Grid Grid.Row="1" Margin="2">
@@ -50,21 +55,22 @@
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="1">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="187*"/>
+                    <ColumnDefinition Width="117*"/>
+                    <ColumnDefinition Width="70*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="start" Click="start_Click" Grid.Column="0">Start</Button>
-                <Button Grid.Column="1" Margin="5,0,0,0">Stop</Button>
+                <Button Grid.Column="0" Click="ButtonStart_Click" Name="startButton" Grid.ColumnSpan="2" Margin="0,0,116.334,0">Start</Button>
+                <Button Grid.Column="1" Margin="5.333,0,0.334,0" IsEnabled="False" Name="stopButton" Click="StopButton_Click" Grid.ColumnSpan="2">Stop</Button>
             </Grid>
         </Grid>
         <Grid Grid.Row="2" Margin="2">
             <StackPanel>
                 <StackPanel Background="LightBlue" Orientation="Horizontal">
-                    <TextBlock x:Name="OutText"  Background="LightGreen" FontFamily="Consolas" FontSize="20"/>
-                    <TextBlock FontFamily="Consolas" FontSize="20"/>
+                    <TextBlock Background="LightGreen" FontFamily="Consolas" FontSize="20" Name="exampleLineGreen"/>
+                    <TextBlock FontFamily="Consolas" FontSize="20" Name="exampleLine"/>
                 </StackPanel>
                 <StackPanel Background="LightBlue" Orientation="Horizontal">
-                    <TextBlock x:Name="InText" Background="LightGreen" FontFamily="Consolas" FontSize="20"/>
+                    <TextBlock Background="LightGreen" FontFamily="Consolas" FontSize="20" Name="userLine"/>
                     <TextBlock FontFamily="Consolas" FontSize="20"/>
                 </StackPanel>
             </StackPanel>
@@ -382,71 +388,71 @@
                     </Grid>
                 </StackPanel>
             </StackPanel>
-            <StackPanel   >
+            <StackPanel Name="stackPanelForKeys">
                 <StackPanel Orientation="Horizontal">
-                    <Grid   Height="50" Width="50">
+                    <Grid Height="50" Width="50">
                         <Border Background="#FFF07795" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock  FontSize="30" HorizontalAlignment="Center" Text="`" VerticalAlignment="Top" Margin="17,1,17,0"/>
+                            <TextBlock Name="key192" FontSize="30" HorizontalAlignment="Center" Text="`" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FFF07795" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock  FontSize="30" HorizontalAlignment="Center" Text="1" VerticalAlignment="Center"/>
+                            <TextBlock Name="key49" FontSize="30" HorizontalAlignment="Center" Text="1" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FFF07795" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="2" VerticalAlignment="Center"/>
+                            <TextBlock Name="key50" FontSize="30" HorizontalAlignment="Center" Text="2" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FFE6F077" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="3" VerticalAlignment="Center"/>
+                            <TextBlock Name="key51" FontSize="30" HorizontalAlignment="Center" Text="3" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FF7FF077" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="4" VerticalAlignment="Center"/>
+                            <TextBlock Name="key52" FontSize="30" HorizontalAlignment="Center" Text="4" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FF77BEF0" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="5" VerticalAlignment="Center"/>
+                            <TextBlock Name="key53" FontSize="30" HorizontalAlignment="Center" Text="5" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FF77BEF0" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="6" VerticalAlignment="Center"/>
+                            <TextBlock Name="key54" FontSize="30" HorizontalAlignment="Center" Text="6" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FFDB77F0" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="7" VerticalAlignment="Center"/>
+                            <TextBlock Name="key55" FontSize="30" HorizontalAlignment="Center" Text="7" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FFDB77F0" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="8" VerticalAlignment="Center"/>
+                            <TextBlock Name="key56" FontSize="30" HorizontalAlignment="Center" Text="8" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FFF07795" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="9" VerticalAlignment="Center"/>
+                            <TextBlock Name="key57" FontSize="30" HorizontalAlignment="Center" Text="9" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FFE6F077" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="0" VerticalAlignment="Center"/>
+                            <TextBlock Name="key48" FontSize="30" HorizontalAlignment="Center" Text="0" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FF7FF077" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="-" VerticalAlignment="Center"/>
+                            <TextBlock Name="key189" FontSize="30" HorizontalAlignment="Center" Text="-" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FF7FF077" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="=" VerticalAlignment="Center"/>
+                            <TextBlock Name="key187" FontSize="30" HorizontalAlignment="Center" Text="=" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="100">
@@ -463,67 +469,67 @@
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FFF07795" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="q" VerticalAlignment="Center"/>
+                            <TextBlock Name="key81" FontSize="30" HorizontalAlignment="Center" Text="q" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FFE6F077" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="w" VerticalAlignment="Center"/>
+                            <TextBlock Name="key87" FontSize="30" HorizontalAlignment="Center" Text="w" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FF7FF077" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="e" VerticalAlignment="Center"/>
+                            <TextBlock Name="key69" FontSize="30" HorizontalAlignment="Center" Text="e" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FF77BEF0" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="r" VerticalAlignment="Center"/>
+                            <TextBlock Name="key82" FontSize="30" HorizontalAlignment="Center" Text="r" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FF77BEF0" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="t" VerticalAlignment="Center"/>
+                            <TextBlock Name="key84" FontSize="30" HorizontalAlignment="Center" Text="t" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FFDB77F0" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="y" VerticalAlignment="Center"/>
+                            <TextBlock Name="key89" FontSize="30" HorizontalAlignment="Center" Text="y" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FFDB77F0" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="u" VerticalAlignment="Center"/>
+                            <TextBlock Name="key85" FontSize="30" HorizontalAlignment="Center" Text="u" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FFF07795" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="i" VerticalAlignment="Center"/>
+                            <TextBlock Name="key73" FontSize="30" HorizontalAlignment="Center" Text="i" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FFE6F077" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="o" VerticalAlignment="Center"/>
+                            <TextBlock Name="key79" FontSize="30" HorizontalAlignment="Center" Text="o" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FF7FF077" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="p" VerticalAlignment="Center"/>
+                            <TextBlock Name="key80" FontSize="30" HorizontalAlignment="Center" Text="p" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FF7FF077" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="[" VerticalAlignment="Center"/>
+                            <TextBlock Name="key219" FontSize="30" HorizontalAlignment="Center" Text="[" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FF7FF077" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="]" VerticalAlignment="Center"/>
+                            <TextBlock Name="key221" FontSize="30" HorizontalAlignment="Center" Text="]" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="75">
                         <Border Background="#FF7FF077" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="\" VerticalAlignment="Center"/>
+                            <TextBlock Name="key220" FontSize="30" HorizontalAlignment="Center" Text="\" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                 </StackPanel>
@@ -535,57 +541,57 @@
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FFF07795" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="a" VerticalAlignment="Center"/>
+                            <TextBlock Name="key65" FontSize="30" HorizontalAlignment="Center" Text="a" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FFE6F077" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="s" VerticalAlignment="Center"/>
+                            <TextBlock Name="key83" FontSize="30" HorizontalAlignment="Center" Text="s" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FF7FF077" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="d" VerticalAlignment="Center"/>
+                            <TextBlock Name="key68" FontSize="30" HorizontalAlignment="Center" Text="d" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FF77BEF0" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="f" VerticalAlignment="Center"/>
+                            <TextBlock Name="key70" FontSize="30" HorizontalAlignment="Center" Text="f" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FF77BEF0" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="g" VerticalAlignment="Center"/>
+                            <TextBlock Name="key71" FontSize="30" HorizontalAlignment="Center" Text="g" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FFDB77F0" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="h" VerticalAlignment="Center"/>
+                            <TextBlock Name="key72" FontSize="30" HorizontalAlignment="Center" Text="h" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FFDB77F0" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="j" VerticalAlignment="Center"/>
+                            <TextBlock Name="key74" FontSize="30" HorizontalAlignment="Center" Text="j" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FFF07795" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="k" VerticalAlignment="Center"/>
+                            <TextBlock Name="key75" FontSize="30" HorizontalAlignment="Center" Text="k" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FFE6F077" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="l" VerticalAlignment="Center"/>
+                            <TextBlock Name="key76" FontSize="30" HorizontalAlignment="Center" Text="l" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FF7FF077" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text=";" VerticalAlignment="Center"/>
+                            <TextBlock Name="key186" FontSize="30" HorizontalAlignment="Center" Text=";" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FF7FF077" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="'" VerticalAlignment="Center"/>
+                            <TextBlock Name="key222" FontSize="30" HorizontalAlignment="Center" Text="'" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="100">
@@ -602,52 +608,52 @@
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FFF07795" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="z" VerticalAlignment="Center"/>
+                            <TextBlock Name="key90" FontSize="30" HorizontalAlignment="Center" Text="z" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FFE6F077" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="x" VerticalAlignment="Center"/>
+                            <TextBlock Name="key88" FontSize="30" HorizontalAlignment="Center" Text="x" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FF7FF077" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="c" VerticalAlignment="Center"/>
+                            <TextBlock Name="key67" FontSize="30" HorizontalAlignment="Center" Text="c" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FF77BEF0" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="v" VerticalAlignment="Center"/>
+                            <TextBlock Name="key86" FontSize="30" HorizontalAlignment="Center" Text="v" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FF77BEF0" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="b" VerticalAlignment="Center"/>
+                            <TextBlock Name="key66" FontSize="30" HorizontalAlignment="Center" Text="b" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FFDB77F0" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="n" VerticalAlignment="Center"/>
+                            <TextBlock Name="key78" FontSize="30" HorizontalAlignment="Center" Text="n" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FFDB77F0" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="m" VerticalAlignment="Center"/>
+                            <TextBlock Name="key77" FontSize="30" HorizontalAlignment="Center" Text="m" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FFF07795" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="," VerticalAlignment="Center"/>
+                            <TextBlock Name="key188" FontSize="30" HorizontalAlignment="Center" Text="," VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FFE6F077" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="." VerticalAlignment="Center"/>
+                            <TextBlock Name="key190" FontSize="30" HorizontalAlignment="Center" Text="." VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="50">
                         <Border Background="#FF7FF077" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="30" HorizontalAlignment="Center" Text="/" VerticalAlignment="Center"/>
+                            <TextBlock Name="key191" FontSize="30" HorizontalAlignment="Center" Text="/" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="125">
@@ -672,9 +678,9 @@
                             <TextBlock FontSize="15" HorizontalAlignment="Center" Text="Alt" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
-                    <Grid Height="50" Width="294">
+                    <Grid Height="50" Width="302">
                         <Border Background="#FFE5BB72" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
-                            <TextBlock FontSize="15" HorizontalAlignment="Center" Text="Space" VerticalAlignment="Center"/>
+                            <TextBlock Name="key32" FontSize="15" HorizontalAlignment="Center" Text="Space" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Grid Height="50" Width="75">
