@@ -48,22 +48,22 @@
             </Button>
             <Button Grid.Column="1" BorderThickness="0"  Background="White" Margin="5 0 5 5" Click="Button_Go_Click">
                 <StackPanel >
-                    <Image x:Name="imgButt"  Source="C:\Users\Рома\Desktop\Step\WPF\Paint\Paint\img\play.png"/>
+                    <Image x:Name="imgButt"  Source="img\play.png"/>
                 </StackPanel>
             </Button>
             <Button Grid.Column="2" BorderThickness="0" Background="White" Margin="5,0" Click="Button_Stop_Click" Height="55" VerticalAlignment="Top">
                 <StackPanel >
-                    <Image  Source="C:\Users\Рома\Desktop\Step\WPF\Paint\Paint\img\stop.png" Stretch="Fill"/>
+                    <Image  Source="img\stop.png" Stretch="Fill"/>
                 </StackPanel>
             </Button>
             <Button Grid.Column="3" BorderThickness="0"  Background="White" Margin="5 0 5 5" Click="Button_left_Click">
                 <StackPanel >
-                    <Image   Source="C:\Users\Рома\Desktop\Step\WPF\Paint\Paint\img\left.png"/>
+                    <Image   Source="img\left.png"/>
                 </StackPanel>
             </Button>
             <Button Grid.Column="4" BorderThickness="0"   Background="White" Margin="5 0 5 5" Click="Button_right_Click">
                 <StackPanel >
-                    <Image   Source="C:\Users\Рома\Desktop\Step\WPF\Paint\Paint\img\right.png"/>
+                    <Image   Source="img\right.png"/>
                 </StackPanel>
             </Button>
             <StackPanel Grid.Column="5"   MouseLeave="StackPanel_MouseLeave">
@@ -74,7 +74,7 @@
                     </Grid.ColumnDefinitions>
                     <Button  Grid.Column="0" DockPanel.Dock="Left" BorderThickness="0"  Background="White" Margin="5 0 0 5"  MouseEnter="Button_MouseEnter" Click="Button_Mute_Click">
                         <StackPanel >
-                            <Image   Source="C:\Users\Рома\Desktop\Step\WPF\Paint\Paint\img\mute.png"/>
+                            <Image   Source="img\mute.png"/>
                         </StackPanel>
                     </Button>
                     <DockPanel Grid.Column="1"  >

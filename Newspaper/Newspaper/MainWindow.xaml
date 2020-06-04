@@ -1,0 +1,49 @@
+﻿<Window x:Class="Newspaper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Newspaper"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="1000">
+    <FlowDocumentScrollViewer>
+        <FlowDocument PagePadding="0">
+            <BlockUIContainer>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="5*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Source="img\11.jpg" Height="60"></Image>
+                    <DockPanel Grid.Row="1" Background="Black">
+                        <Grid DockPanel.Dock="Top" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Button Grid.Column="0" Margin="0 5 0 0" BorderThickness="0"  Background="Orange" Foreground="OldLace">Top News</Button>
+                            <Button Grid.Column="1" Margin="0 5 0 0" BorderThickness="0"  Background="Orange" Foreground="OldLace">Local</Button>
+                            <Button Grid.Column="2" Margin="0 5 0 0" BorderThickness="0"  Background="Orange" Foreground="OldLace">National/World</Button>
+                            <Button Grid.Column="3" Margin="0 5 0 0" BorderThickness="0"  Background="Orange" Foreground="OldLace">Business/Tech</Button>
+                            <Button Grid.Column="4" Margin="0 5 0 0" BorderThickness="0"  Background="Orange" Foreground="OldLace">Sports</Button>
+                            <Button Grid.Column="5" Margin="0 5 0 0" BorderThickness="0"  Background="Orange" Foreground="OldLace">Life arts</Button>
+                            <Button Grid.Column="6" Margin="0 5 0 0" BorderThickness="0"  Background="Orange" Foreground="OldLace">Opinion</Button>
+                            <Button Grid.Column="7" Margin="0 5 0 0" BorderThickness="0"  Background="Orange" Foreground="OldLace">Most Read</Button>
+                        </Grid>
+                        <DatePicker DockPanel.Dock="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" 
+                        DisplayDateEnd="06/03/2020 22:10:00" DisplayDateStart="06/03/2020 22:10:00" Text="03.06.2020 22:10" SelectedDateFormat="Long" IsTodayHighlighted="True" 
+                        
+                        IsHitTestVisible="False" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" />
+                    </DockPanel>
+                </Grid>
+            </BlockUIContainer>
+        </FlowDocument>
+    </FlowDocumentScrollViewer>
+</Window>
