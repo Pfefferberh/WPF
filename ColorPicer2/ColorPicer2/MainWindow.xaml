@@ -1,0 +1,72 @@
+﻿<Window x:Class="ColorPicer2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ColorPicer2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid Margin="10" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="659*"/>
+            <ColumnDefinition Width="133*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="148*"></RowDefinition>
+            <RowDefinition Height="246*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0" Grid.ColumnSpan="2" >
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" ></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*" ></ColumnDefinition>
+                    <ColumnDefinition Width="8*" ></ColumnDefinition>
+                    <ColumnDefinition Width="*" ></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <CheckBox Name="CbAlpha" Grid.Row="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Click="CheckBox_Checked">Alpha:</CheckBox>
+                <CheckBox Name="CbRed" Grid.Row="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"   Click="CheckBox_Checked">Red:</CheckBox>
+                <CheckBox Name="CbGreen" Grid.Row="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Click="CheckBox_Checked">Green:</CheckBox>
+                <CheckBox Name="CbBlue" Grid.Row="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"  Click="CheckBox_Checked">Blue:</CheckBox>
+
+                <Label Grid.Row="0"  Grid.Column="1"  Content="{Binding ElementName=SAlpha, Path=Value}"></Label>
+                <Label Grid.Row="1"  Grid.Column="1" Content="{Binding ElementName=SRed, Path=Value}"></Label>
+                <Label Grid.Row="2"  Grid.Column="1" Content="{Binding ElementName=SGreen, Path=Value}"></Label>
+                <Label Grid.Row="3"  Grid.Column="1" Content="{Binding ElementName=SBlue, Path=Value}"></Label>
+
+                <Slider Name="SAlpha" Grid.Row="0" Grid.Column="2" ValueChanged="S_ValueChanged" Minimum="0" Maximum="255"></Slider>
+                <Slider Name="SRed"   Grid.Row="1" Grid.Column="2" ValueChanged="S_ValueChanged" Minimum="0" Maximum="255"></Slider>
+                <Slider Name="SGreen" Grid.Row="2" Grid.Column="2" ValueChanged="S_ValueChanged" Minimum="0" Maximum="255"></Slider>
+                <Slider Name="SBlue"  Grid.Row="3" Grid.Column="2" ValueChanged="S_ValueChanged" Minimum="0" Maximum="255"></Slider>
+                <Button Grid.Row="4" Click="Button_Click" >ADD</Button>
+                <Button x:Name="ColBut" Grid.RowSpan="4" Grid.Column="3" Background="White" ></Button>
+            </Grid>
+        </DockPanel>
+        <StackPanel  Grid.Row="1" Grid.ColumnSpan="2">
+            <ListBox x:Name="ListB" DockPanel.Dock="Top">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Width="{Binding widh}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                <ColumnDefinition Width="7*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock  Grid.Column="0"  Text="{Binding nameCol}"></TextBlock>
+                            <Label   Grid.Column="1" Background="{Binding brush}"></Label>
+                            <Button   Grid.Column="2" Tag="{Binding index}" Click="Button_DELETE_Click">DELETE</Button>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+    </Grid>
+</Window>

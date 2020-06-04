@@ -1,0 +1,15 @@
+C:\Users\Рома\Desktop\Step\WPF\ColorPicer2\ColorPicer2\obj\Debug\ColorPicer2.csprojAssemblyReference.cache
+C:\Users\Рома\Desktop\Step\WPF\ColorPicer2\ColorPicer2\obj\Debug\MainWindow.g.cs
+C:\Users\Рома\Desktop\Step\WPF\ColorPicer2\ColorPicer2\obj\Debug\App.g.cs
+C:\Users\Рома\Desktop\Step\WPF\ColorPicer2\ColorPicer2\obj\Debug\ColorPicer2_MarkupCompile.cache
+C:\Users\Рома\Desktop\Step\WPF\ColorPicer2\ColorPicer2\obj\Debug\ColorPicer2_MarkupCompile.lref
+C:\Users\Рома\Desktop\Step\WPF\ColorPicer2\ColorPicer2\bin\Debug\ColorPicer2.exe.config
+C:\Users\Рома\Desktop\Step\WPF\ColorPicer2\ColorPicer2\bin\Debug\ColorPicer2.exe
+C:\Users\Рома\Desktop\Step\WPF\ColorPicer2\ColorPicer2\bin\Debug\ColorPicer2.pdb
+C:\Users\Рома\Desktop\Step\WPF\ColorPicer2\ColorPicer2\obj\Debug\MainWindow.baml
+C:\Users\Рома\Desktop\Step\WPF\ColorPicer2\ColorPicer2\obj\Debug\ColorPicer2.g.resources
+C:\Users\Рома\Desktop\Step\WPF\ColorPicer2\ColorPicer2\obj\Debug\ColorPicer2.Properties.Resources.resources
+C:\Users\Рома\Desktop\Step\WPF\ColorPicer2\ColorPicer2\obj\Debug\ColorPicer2.csproj.GenerateResource.cache
+C:\Users\Рома\Desktop\Step\WPF\ColorPicer2\ColorPicer2\obj\Debug\ColorPicer2.csproj.CoreCompileInputs.cache
+C:\Users\Рома\Desktop\Step\WPF\ColorPicer2\ColorPicer2\obj\Debug\ColorPicer2.exe
+C:\Users\Рома\Desktop\Step\WPF\ColorPicer2\ColorPicer2\obj\Debug\ColorPicer2.pdb
