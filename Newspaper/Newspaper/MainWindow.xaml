@@ -6,44 +6,181 @@
         xmlns:local="clr-namespace:Newspaper"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="1000">
-    <FlowDocumentScrollViewer>
-        <FlowDocument PagePadding="0">
-            <BlockUIContainer>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="5*"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Source="img\11.jpg" Height="60"></Image>
-                    <DockPanel Grid.Row="1" Background="Black">
-                        <Grid DockPanel.Dock="Top" >
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <Button Grid.Column="0" Margin="0 5 0 0" BorderThickness="0"  Background="Orange" Foreground="OldLace">Top News</Button>
-                            <Button Grid.Column="1" Margin="0 5 0 0" BorderThickness="0"  Background="Orange" Foreground="OldLace">Local</Button>
-                            <Button Grid.Column="2" Margin="0 5 0 0" BorderThickness="0"  Background="Orange" Foreground="OldLace">National/World</Button>
-                            <Button Grid.Column="3" Margin="0 5 0 0" BorderThickness="0"  Background="Orange" Foreground="OldLace">Business/Tech</Button>
-                            <Button Grid.Column="4" Margin="0 5 0 0" BorderThickness="0"  Background="Orange" Foreground="OldLace">Sports</Button>
-                            <Button Grid.Column="5" Margin="0 5 0 0" BorderThickness="0"  Background="Orange" Foreground="OldLace">Life arts</Button>
-                            <Button Grid.Column="6" Margin="0 5 0 0" BorderThickness="0"  Background="Orange" Foreground="OldLace">Opinion</Button>
-                            <Button Grid.Column="7" Margin="0 5 0 0" BorderThickness="0"  Background="Orange" Foreground="OldLace">Most Read</Button>
-                        </Grid>
-                        <DatePicker DockPanel.Dock="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" 
+    <Grid>
+        <FlowDocumentScrollViewer>
+            <FlowDocument PagePadding="0">
+                <BlockUIContainer>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="5*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Source="img\11.jpg" Height="60"></Image>
+                        <DockPanel Grid.Row="1" Background="Black">
+                            <Grid DockPanel.Dock="Top" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="0" Margin="0 5 0 0" BorderThickness="0"  Background="Orange" Foreground="OldLace">Top News</Button>
+                                <Button Grid.Column="1" Margin="0 5 0 0" BorderThickness="0"  Background="Orange" Foreground="OldLace">Local</Button>
+                                <Button Grid.Column="2" Margin="0 5 0 0" BorderThickness="0"  Background="Orange" Foreground="OldLace">National/World</Button>
+                                <Button Grid.Column="3" Margin="0 5 0 0" BorderThickness="0"  Background="Orange" Foreground="OldLace">Business/Tech</Button>
+                                <Button Grid.Column="4" Margin="0 5 0 0" BorderThickness="0"  Background="Orange" Foreground="OldLace">Sports</Button>
+                                <Button Grid.Column="5" Margin="0 5 0 0" BorderThickness="0"  Background="Orange" Foreground="OldLace">Life arts</Button>
+                                <Button Grid.Column="6" Margin="0 5 0 0" BorderThickness="0"  Background="Orange" Foreground="OldLace">Opinion</Button>
+                                <Button Grid.Column="7" Margin="0 5 0 0" BorderThickness="0"  Background="Orange" Foreground="OldLace">Most Read</Button>
+                            </Grid>
+                            <DatePicker DockPanel.Dock="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" 
                         DisplayDateEnd="06/03/2020 22:10:00" DisplayDateStart="06/03/2020 22:10:00" Text="03.06.2020 22:10" SelectedDateFormat="Long" IsTodayHighlighted="True" 
                         
                         IsHitTestVisible="False" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" />
-                    </DockPanel>
-                </Grid>
-            </BlockUIContainer>
-        </FlowDocument>
-    </FlowDocumentScrollViewer>
+                        </DockPanel>
+                    </Grid>
+                </BlockUIContainer>
+                <Table BorderBrush="Black" CellSpacing="0" Margin="0" Padding="10">
+                    <TableRowGroup>
+                        <TableRow>
+                            <TableCell BorderBrush="Black" BorderThickness="0,0,1,0" FontSize="10">
+                                <Paragraph Padding="10 0" TextAlignment="Center">
+                                    <Bold>Lorem ipsum dolor sit amet</Bold>
+                                </Paragraph>
+                                <Paragraph Padding="10" TextAlignment="Left">
+                                    <Span>
+                                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                    laboris nisi ut aliquip ex ea commodo consequat. 
+                                    Duis aute irure dolor in reprehenderit in volup
+                                    </Span>
+                                </Paragraph>
+                                <Paragraph Padding="10 0" TextAlignment="Center">
+                                    <Bold>Lorem ipsum dolor sit amet</Bold>
+                                </Paragraph>
+                                <Paragraph Padding="10" TextAlignment="Left">
+                                    <Span>
+                                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                    laboris nisi ut aliquip ex ea commodo consequat. 
+                                    Duis aute irure dolor in reprehenderit in volup
+                                    </Span>
+                                </Paragraph>
+                                <Paragraph Padding="10 0" TextAlignment="Center">
+                                    <Bold>Lorem ipsum dolor sit amet</Bold>
+                                </Paragraph>
+                                <Paragraph Padding="10" TextAlignment="Left">
+                                    <Span>
+                                        consectetur adipiscing elit, sed do eiusmod incididunt ut labore et dol
+                                    </Span>
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black"  BorderThickness="0,0,1,0" FontSize="10" ColumnSpan="2">
+                                <Table Margin="0">
+                                    <TableRowGroup>
+                                        <TableRow>
+                                            <TableCell  ColumnSpan="2" TextAlignment="Center" FontSize="20" Padding="0">
+                                                <Paragraph >
+                                                    <Bold>
+                                                    August roadwork will turn 1-5
+                                                        <LineBreak></LineBreak> into parking lot
+                                                    </Bold>
+                                                </Paragraph>
+                                            </TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell BorderBrush="Black" BorderThickness="0,0,1,0" FontSize="10">
+                                                <Paragraph Padding="10 0" TextAlignment="Center">
+                                                    <Bold>Lorem ipsum dolor sit amet</Bold>
+                                                </Paragraph>
+                                                <Paragraph Padding="10" TextAlignment="Left">
+                                                    <Span>
+                                                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                                         laboris nisi ut aliquip ex ea commodo consequat. 
+                                                          Duis aute irure dolor in reprehenderkjhgkit in volup
+                                                    </Span>
+                                                </Paragraph>
+                                                <Paragraph Padding="10 0" TextAlignment="Center">
+                                                    <Bold>Lorem ipsum dolor sit amet</Bold>
+                                                </Paragraph>
+                                                <Paragraph Padding="10" TextAlignment="Left">
+                                                    <Span>
+                                                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                    laboris nisi ut aliquip ex ea commodo consequat. 
+                                    Duis aute irure dolor in reprehenderit in volup sequat. 
+                                    Duis aute irure dolor in reprehenderit in ;;;;volupsequat. 
+                                    Duis aute irure dolor in reprehenderit in volup
+                                                    </Span>
+                                                </Paragraph>
+                                            </TableCell>
+                                            <TableCell>
+                                                <Paragraph Padding="10 0" TextAlignment="Center">
+                                                    <Bold>Lorem ipsum dolor sit amet</Bold>
+                                                </Paragraph>
+                                                <Paragraph Padding="10" TextAlignment="Left">
+                                                    <Span>
+                                                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                    laboris nisi ut aliquip ex ea commodo consequat. 
+                                    Duis aute irure dolor in reprehenderit in volup
+                                                    </Span>
+                                                </Paragraph>
+                                                <Paragraph Padding="10 0" TextAlignment="Center">
+                                                    <Bold>Lorem ipsum dolor sit amet</Bold>
+                                                </Paragraph>
+                                                <Paragraph Padding="10" TextAlignment="Left">
+                                                    <Span>
+                                                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                    laboris nisi ut aliquip ex ea commodo consequat. 
+                                    Duis aute irure dolor in reprehenderit in volupsequat. 
+                                    Duis aute irure dolor in reprehenderit in volup
+                                                         volupsequat. 
+                                    Duis aute irure dolor in reprehenderit in volup
+                                                         volupsequat. 
+                                    Duis aute irure dolor in reprehenderit in volup
+                                                    </Span>
+                                                </Paragraph>
+                                            </TableCell>
+                                        </TableRow>
+                                    </TableRowGroup>
+                                </Table>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" FontSize="10" >
+                                <Paragraph Padding="10 0" TextAlignment="Center">
+                                    <Bold>Lorem ipsum dolor sit amet</Bold>
+                                </Paragraph>
+                                <Paragraph Padding="10" TextAlignment="Left">
+                                    <Span>
+                                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                    laboris nisi ut aliquip ex ea commodo consequat. 
+                                    Duis aute irure dolor in reprehenderit in volup
+                                    </Span>
+                                </Paragraph>
+                                <Paragraph Padding="10 0" TextAlignment="Center">
+                                    <Bold>Lorem ipsum dolor sit amet</Bold>
+                                </Paragraph>
+                                <Paragraph Padding="10" TextAlignment="Left">
+                                    <Span>
+                                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                    laboris nisi ut aliquip ex ea commodo consequat. 
+                                    Duis aute irure dolor in reprehenderit in volup
+                                    </Span>
+                                </Paragraph>
+                                <Paragraph Padding="10 0" TextAlignment="Center">
+                                    <Bold>Lorem ipsum dolor sit amet</Bold>
+                                </Paragraph>
+                                <Paragraph Padding="10" TextAlignment="Left">
+                                    <Span>
+                                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                    </Span>
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                    </TableRowGroup>
+                </Table>
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
+    </Grid>
 </Window>
