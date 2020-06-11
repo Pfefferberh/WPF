@@ -1,0 +1,159 @@
+﻿<Window x:Class="ExamWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExamWPF"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <fa:FontAwesome x:Key="icon"></fa:FontAwesome>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2.5*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="0" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Button Background="DarkBlue" >
+                <StackPanel>
+                    <Label Grid.Row="0" fa:Awesome.Content="Desktop"  Foreground="White" FontSize="50" HorizontalContentAlignment="Center"></Label>
+                    <Label Grid.Row="1"  Foreground="White" FontSize="15" Content="DESKTOP" HorizontalContentAlignment="Center"></Label>
+                    <Label Grid.Row="2" Foreground="White" FontSize="10" Content="WPF" HorizontalContentAlignment="Center"></Label>
+                    <Label Grid.Row="3" Foreground="White" FontSize="10" Content="Window Forms" HorizontalContentAlignment="Center"></Label>
+                    <Label Grid.Row="4" Foreground="White" FontSize="10" Content="WPF" HorizontalContentAlignment="Center"></Label>
+                </StackPanel>
+            </Button>
+            <Button Grid.Column="1" Background="Orange" >
+                <StackPanel>
+                    <Label Grid.Row="0" fa:Awesome.Content="Globe"  Foreground="White" FontSize="50" HorizontalContentAlignment="Center"></Label>
+                    <Label Grid.Row="1"  Foreground="White" FontSize="15" Content="WEP" HorizontalContentAlignment="Center"></Label>
+                    <Label Grid.Row="2" Foreground="White" FontSize="10" Content="ASP.NET" HorizontalContentAlignment="Center"></Label>
+                    <Label Grid.Row="3" Foreground="White" FontSize="10" Content="" HorizontalContentAlignment="Center"></Label>
+                    <Label Grid.Row="3" Foreground="White" FontSize="10" Content="" HorizontalContentAlignment="Center"></Label>
+                </StackPanel>
+            </Button>
+            <Button Grid.Column="2" Background="Aquamarine" >
+                <StackPanel>
+                    <Label Grid.Row="0" fa:Awesome.Content="Cloud"  Foreground="White" FontSize="50" HorizontalContentAlignment="Center"></Label>
+                    <Label Grid.Row="1"  Foreground="White" FontSize="15" Content="CLOUD" HorizontalContentAlignment="Center"></Label>
+                    <Label Grid.Row="2" Foreground="White" FontSize="10" Content="Azure" HorizontalContentAlignment="Center"></Label>
+                    <Label Grid.Row="3" Foreground="White" FontSize="10" Content=" " HorizontalContentAlignment="Center"></Label>
+                    <Label Grid.Row="3" Foreground="White" FontSize="10" Content=" " HorizontalContentAlignment="Center"></Label>
+                </StackPanel>
+            </Button>
+            <Button Grid.Column="3" Background="PaleVioletRed" >
+                <StackPanel>
+                    <Label Grid.Row="0" fa:Awesome.Content="Mobile"  Foreground="White" FontSize="50" HorizontalContentAlignment="Center"></Label>
+                    <Label Grid.Row="1"  Foreground="White" FontSize="15" Content="MOBILE" HorizontalContentAlignment="Center"></Label>
+                    <Label Grid.Row="2" Foreground="White" FontSize="10" Content="Xamarin" HorizontalContentAlignment="Center"></Label>
+                    <Label Grid.Row="3" Foreground="White" FontSize="10" Content=" " HorizontalContentAlignment="Center"></Label>
+                    <Label Grid.Row="3" Foreground="White" FontSize="10" Content=" " HorizontalContentAlignment="Center"></Label>
+                </StackPanel>
+            </Button>
+            <Button Grid.Column="4" Background="GreenYellow" >
+                <StackPanel>
+                    <Label Grid.Row="0" fa:Awesome.Content="Gamepad"  Foreground="White" FontSize="50" HorizontalContentAlignment="Center"></Label>
+                    <Label Grid.Row="1"  Foreground="White" FontSize="15" Content="GAMING" HorizontalContentAlignment="Center"></Label>
+                    <Label Grid.Row="2" Foreground="White" FontSize="10" Content="Unity" HorizontalContentAlignment="Center"></Label>
+                    <Label Grid.Row="3" Foreground="White" FontSize="10" Content="" HorizontalContentAlignment="Center"></Label>
+                    <Label Grid.Row="3" Foreground="White" FontSize="10" Content="" HorizontalContentAlignment="Center"></Label>
+                </StackPanel>
+            </Button>
+            <Button Grid.Column="5" Background="DarkCyan" >
+                <StackPanel>
+                    <Label fa:Awesome.Content="Microchip"  Foreground="White" FontSize="50" HorizontalContentAlignment="Center"></Label>
+                    <Label  Foreground="White" FontSize="15" Content="IoT" HorizontalContentAlignment="Center"></Label>
+                    <Label Foreground="White" FontSize="10" Content="ARM32" HorizontalContentAlignment="Center"></Label>
+                    <Label Foreground="White" FontSize="10" Content="ARM64" HorizontalContentAlignment="Center"></Label>
+                    <Label Foreground="White" FontSize="10" Content="" HorizontalContentAlignment="Center"></Label>
+                </StackPanel>
+            </Button>
+            <Button Grid.Column="6" Background="Red" >
+                <StackPanel>
+                    <Label fa:Awesome.Content="Magic"  Foreground="White" FontSize="50" HorizontalContentAlignment="Center"></Label>
+                    <Label  Foreground="White" FontSize="15" Content="AI" HorizontalContentAlignment="Center"></Label>
+                    <Label Foreground="White" FontSize="10" Content="MLNET" HorizontalContentAlignment="Center"></Label>
+                    <TextBlock Grid.Row="3" Foreground="White" FontSize="10" Text="     .NET for       Apache Spank" TextWrapping="Wrap" ></TextBlock>
+                    <Label Foreground="White" FontSize="10" Content="" HorizontalContentAlignment="Center"></Label>
+                </StackPanel>
+            </Button>
+        </Grid>
+        <Grid  Grid.Column="1" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label  Grid.Row="0"  Content="TOOLS" Background="DarkGray" FontSize="20"></Label>
+            <Button Grid.Row="1" Background="LightGray" Click="ButtonVS_Click" Tag="{Binding ElementName=btnvs,Path=Content}">
+                <StackPanel>
+                    <Image Source="img\vs.png" Width="50" Stretch="UniformToFill"></Image>
+                    <Label Name="btnvs"  FontSize="15" Content="VISUAL STUDIO" HorizontalContentAlignment="Center" Tag="https://visualstudio.microsoft.com/ru/downloads/"></Label>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="2" Background="LightGray"  Click="ButtonVS_Click" Tag="{Binding ElementName=btnvsmac,Path=Content}">
+                <StackPanel>
+                    <Image Source="img\vsmac.png"  Width="50"></Image>
+                    <Label Name="btnvsmac" FontSize="15" Content="VISUAL STUDIO FOR MAC" HorizontalContentAlignment="Center"></Label>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="3" Background="LightGray" Click="ButtonVS_Click" Tag="{Binding ElementName=btnvscod,Path=Content}" >
+                <StackPanel>
+                    <Image Source="img\vscod.png"  Width="50"></Image>
+                    <Label Name="btnvscod" FontSize="15" Content="VISUAL STUDIO CODE" HorizontalContentAlignment="Center"></Label>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="4" Background="LightGray"  Click="ButtonVS_Click" Tag="{Binding ElementName=btncmd,Path=Content}" >
+                <StackPanel>
+                    <Image Source="img\cmd.png"  Width="50"></Image>
+                    <Label Name="btncmd" FontSize="15" Content="COMMAND LINE INTERFACE" HorizontalContentAlignment="Center"></Label>
+                </StackPanel>
+            </Button>
+        </Grid>
+        <Grid Grid.Row="1" Background="DarkViolet">
+            <Grid.RowDefinitions>
+                <RowDefinition ></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition  ></RowDefinition>
+                <RowDefinition  ></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Content=".NET STANDART" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="10" FontSize="15" Foreground="LightGray"></Label>
+            <StackPanel Grid.Row="1">
+                <Label x:Name="lbScreen"  Content=".NET 5 " Background="Purple" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" Margin="5 0 5 0"></Label>
+                <Label  Background="Purple" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Margin="5 0 5 10" >
+    <Hyperlink Name="link" Click="Button_link_Click"> </Hyperlink>
+                </Label>
+            </StackPanel>
+            <Label Grid.Row="2" Content="INFRASTUCTURE" Background="Purple" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15"  Margin="5 0 5 0"></Label>
+            <Grid
+                Grid.Row="3" Background="Purple"  Margin="5 0 5 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Margin="10 0 10 8" >RUNTIME COMPONENTS</Button>
+                <Button Grid.Column="1" Margin="10 0 10 8" >COMPILERS</Button>
+                <Button Grid.Column="2" Margin="10 0 10 8" >LANGUAGES</Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

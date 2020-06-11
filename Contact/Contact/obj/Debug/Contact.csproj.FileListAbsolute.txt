@@ -1,0 +1,15 @@
+C:\Users\Рома\Desktop\Step\WPF\Contact\Contact\bin\Debug\Contact.exe.config
+C:\Users\Рома\Desktop\Step\WPF\Contact\Contact\bin\Debug\Contact.exe
+C:\Users\Рома\Desktop\Step\WPF\Contact\Contact\bin\Debug\Contact.pdb
+C:\Users\Рома\Desktop\Step\WPF\Contact\Contact\obj\Debug\Contact.csprojAssemblyReference.cache
+C:\Users\Рома\Desktop\Step\WPF\Contact\Contact\obj\Debug\MainWindow.g.cs
+C:\Users\Рома\Desktop\Step\WPF\Contact\Contact\obj\Debug\App.g.cs
+C:\Users\Рома\Desktop\Step\WPF\Contact\Contact\obj\Debug\Contact_MarkupCompile.cache
+C:\Users\Рома\Desktop\Step\WPF\Contact\Contact\obj\Debug\Contact_MarkupCompile.lref
+C:\Users\Рома\Desktop\Step\WPF\Contact\Contact\obj\Debug\MainWindow.baml
+C:\Users\Рома\Desktop\Step\WPF\Contact\Contact\obj\Debug\Contact.g.resources
+C:\Users\Рома\Desktop\Step\WPF\Contact\Contact\obj\Debug\Contact.Properties.Resources.resources
+C:\Users\Рома\Desktop\Step\WPF\Contact\Contact\obj\Debug\Contact.csproj.GenerateResource.cache
+C:\Users\Рома\Desktop\Step\WPF\Contact\Contact\obj\Debug\Contact.csproj.CoreCompileInputs.cache
+C:\Users\Рома\Desktop\Step\WPF\Contact\Contact\obj\Debug\Contact.exe
+C:\Users\Рома\Desktop\Step\WPF\Contact\Contact\obj\Debug\Contact.pdb
