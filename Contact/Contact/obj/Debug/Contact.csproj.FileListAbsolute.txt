@@ -13,3 +13,4 @@ C:\Users\Рома\Desktop\Step\WPF\Contact\Contact\obj\Debug\Contact.csproj.Gene
 C:\Users\Рома\Desktop\Step\WPF\Contact\Contact\obj\Debug\Contact.csproj.CoreCompileInputs.cache
 C:\Users\Рома\Desktop\Step\WPF\Contact\Contact\obj\Debug\Contact.exe
 C:\Users\Рома\Desktop\Step\WPF\Contact\Contact\obj\Debug\Contact.pdb
+C:\Users\Рома\Desktop\Step\WPF\Contact\Contact\obj\Debug\GeneratedInternalTypeHelper.g.cs

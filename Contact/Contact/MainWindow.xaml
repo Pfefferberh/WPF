@@ -4,16 +4,31 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Contact"
+        xmlns:vwcnt="clr-namespace:Contact.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="670" MinWidth="670">
-    <Grid>
+    <Window.Resources>
+        <vwcnt:ApplicationViewModel x:Key="vwcnt" />
+    </Window.Resources>
+    <Grid DataContext="{DynamicResource vwcnt}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <ListBox Grid.Column="0"></ListBox>
+        <ListBox Grid.Column="0" ItemsSource="{Binding Cnts}"
+                 SelectedItem="{Binding SelectedContacts}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Path=Name}"></TextBlock>
+                        <Button>Edit</Button>
+                        <Button>Delete</Button>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center">
-            <Grid>
+            <Grid  DataContext="{StaticResource vwcnt}" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
@@ -22,10 +37,11 @@
                 
                 <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Margin="10 10 10 10">
                     <StackPanel >
-                    <TextBox  Width="130" Margin="5 30 5 5">fff</TextBox>
-                    <TextBox  Width="130" Margin="5 10 5 5">fff</TextBox>
-                    <TextBox  Width="130" Margin="5 10 5 20">fff</TextBox>
-                        <Button Margin="15 10 15 30">Add</Button>
+                        <TextBox x:Name="nm" Width="130" Margin="5 30 5 5" Text="{Binding SelectedContacts.Name}"></TextBox>
+                        <TextBox Name="srnm" Width="130" Margin="5 10 5 5"  Text="{Binding SelectedContacts.Surname}"></TextBox>
+                        <TextBox Name="nmbr" Width="130" Margin="5 10 5 20" Text="{Binding SelectedContacts.Number}"></TextBox>
+                        <Button Margin="15 10 15 30" Command="{Binding AddCommand }"  
+                        >Add</Button>
                         <Button Margin="15 10 15 30" Visibility="Collapsed">Clear</Button>
                     </StackPanel>
                 </Border>
