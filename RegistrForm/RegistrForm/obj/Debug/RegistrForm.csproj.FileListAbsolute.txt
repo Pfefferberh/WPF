@@ -1,0 +1,15 @@
+C:\Users\Рома\Desktop\Step\WPF\RegistrForm\RegistrForm\bin\Debug\RegistrForm.exe.config
+C:\Users\Рома\Desktop\Step\WPF\RegistrForm\RegistrForm\bin\Debug\RegistrForm.exe
+C:\Users\Рома\Desktop\Step\WPF\RegistrForm\RegistrForm\bin\Debug\RegistrForm.pdb
+C:\Users\Рома\Desktop\Step\WPF\RegistrForm\RegistrForm\obj\Debug\RegistrForm.csprojAssemblyReference.cache
+C:\Users\Рома\Desktop\Step\WPF\RegistrForm\RegistrForm\obj\Debug\MainWindow.g.cs
+C:\Users\Рома\Desktop\Step\WPF\RegistrForm\RegistrForm\obj\Debug\App.g.cs
+C:\Users\Рома\Desktop\Step\WPF\RegistrForm\RegistrForm\obj\Debug\RegistrForm_MarkupCompile.cache
+C:\Users\Рома\Desktop\Step\WPF\RegistrForm\RegistrForm\obj\Debug\RegistrForm_MarkupCompile.lref
+C:\Users\Рома\Desktop\Step\WPF\RegistrForm\RegistrForm\obj\Debug\MainWindow.baml
+C:\Users\Рома\Desktop\Step\WPF\RegistrForm\RegistrForm\obj\Debug\RegistrForm.g.resources
+C:\Users\Рома\Desktop\Step\WPF\RegistrForm\RegistrForm\obj\Debug\RegistrForm.Properties.Resources.resources
+C:\Users\Рома\Desktop\Step\WPF\RegistrForm\RegistrForm\obj\Debug\RegistrForm.csproj.GenerateResource.cache
+C:\Users\Рома\Desktop\Step\WPF\RegistrForm\RegistrForm\obj\Debug\RegistrForm.csproj.CoreCompileInputs.cache
+C:\Users\Рома\Desktop\Step\WPF\RegistrForm\RegistrForm\obj\Debug\RegistrForm.exe
+C:\Users\Рома\Desktop\Step\WPF\RegistrForm\RegistrForm\obj\Debug\RegistrForm.pdb
