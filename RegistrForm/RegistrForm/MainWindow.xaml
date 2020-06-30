@@ -6,24 +6,41 @@
         xmlns:local="clr-namespace:RegistrForm"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="400">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Style.Triggers>
+                <Trigger Property="IsFocused" Value="True">
+                    <Setter Property="Tag" Value="DarkOrange"  ></Setter>
+                    <Setter Property="BorderThickness" Value="2"  ></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="{Binding ElementName=SkreenForBor, Path=Text,UpdateSourceTrigger=PropertyChanged}" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.5*"></RowDefinition>
             <RowDefinition Height="0.5*"></RowDefinition>
             <RowDefinition Height="2*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Label Name="Skreen" Grid.RowSpan="2" Visibility="Visible"></Label>
+        <Label Name="Skreen" Grid.RowSpan="2" Visibility="Visible" Foreground="White"></Label>
+        <TextBlock Name="SkreenForBor" Grid.RowSpan="2" Visibility="Hidden" Text="{Binding ElementName=btn,Path=Tag,UpdateSourceTrigger=PropertyChanged}"></TextBlock>
         <StackPanel Grid.Row="1">
-        <Button Width="60" Height="20" Margin="5" Click="Button_Click">Login</Button>
+            <Button x:Name="btn" Width="60" Height="20" Margin="5" Click="Button_Click" >Login</Button>
             <Button Width="60" Height="20" Margin="5" Grid.Row="1" Click="Button_Click_1">Registr</Button>
         </StackPanel>
         <StackPanel Grid.Row="2" >
             <Label Name="lblogin" HorizontalContentAlignment="Center" Visibility="Hidden">Login</Label>
             <TextBox Name="login" Width="120" Margin="0 0 0 10" Visibility="Hidden"></TextBox>
             <Label Name="lbPassw" HorizontalContentAlignment="Center" Visibility="Hidden">Password</Label>
-            <TextBox Name="Password" Width="120" Margin="0 0 0 10" Visibility="Hidden"></TextBox>
+            <PasswordBox Name="Password" Width="120" Margin="0 0 0 10" Visibility="Hidden"></PasswordBox>
             <Label Name="lbConPasw" HorizontalContentAlignment="Center" Visibility="Hidden">Confirm the password</Label>
-            <TextBox Name="CnPassword" Width="120" Margin="0 0 0 10" Visibility="Hidden"></TextBox>
+            <PasswordBox Name="CnPassword" Width="120" Margin="0 0 0 10" Visibility="Hidden"></PasswordBox>
             <Label Name="lbEmail" HorizontalContentAlignment="Center" Visibility="Hidden">Email</Label>
             <TextBox Name="Email" Width="150" Visibility="Hidden"></TextBox>
             <Button x:Name="ok" Width="40" Margin="10" Visibility="Hidden" Click="ok_Click">ok</Button>

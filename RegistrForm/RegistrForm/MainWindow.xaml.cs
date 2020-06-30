@@ -1,18 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Xml.Serialization;
 
 namespace RegistrForm
@@ -22,15 +10,20 @@ namespace RegistrForm
     /// </summary>
     public partial class MainWindow : Window
     {
+        User user = new User();
+        List<User> users = new List<User>();
         bool check1 = true;
         bool check2 = true;
+        bool check_user = true;
         public MainWindow()
         {
             InitializeComponent();
+            load();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            check_user = false;
             if (check1)
             {
                 ok.Visibility = Visibility.Visible;
@@ -43,46 +36,47 @@ namespace RegistrForm
             else
             {
                 login.Text = "";
-                Password.Text = "";
+                Password.Password = "";
 
                 ok.Visibility = Visibility.Hidden;
                 lblogin.Visibility = Visibility.Hidden;
                 login.Visibility = Visibility.Hidden;
                 lbPassw.Visibility = Visibility.Hidden;
                 Password.Visibility = Visibility.Hidden;
-            check1 = true;
+                check1 = true;
             }
             lbConPasw.Visibility = Visibility.Hidden;
             CnPassword.Visibility = Visibility.Hidden;
             lbEmail.Visibility = Visibility.Hidden;
             Email.Visibility = Visibility.Hidden;
-                  check2 = true;
-            CnPassword.Text = "";
+            check2 = true;
+            CnPassword.Password = "";
             Email.Text = "";
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            check_user = true;
             if (check2)
             {
                 ok.Visibility = Visibility.Visible;
 
                 lblogin.Visibility = Visibility.Visible;
-            login.Visibility = Visibility.Visible;
-            lbPassw.Visibility = Visibility.Visible;
-            Password.Visibility = Visibility.Visible;
+                login.Visibility = Visibility.Visible;
+                lbPassw.Visibility = Visibility.Visible;
+                Password.Visibility = Visibility.Visible;
 
-            lbConPasw.Visibility = Visibility.Visible;
-            CnPassword.Visibility = Visibility.Visible;
-            lbEmail.Visibility = Visibility.Visible;
-            Email.Visibility = Visibility.Visible;
+                lbConPasw.Visibility = Visibility.Visible;
+                CnPassword.Visibility = Visibility.Visible;
+                lbEmail.Visibility = Visibility.Visible;
+                Email.Visibility = Visibility.Visible;
                 check2 = false;
             }
             else
             {
                 login.Text = "";
-                Password.Text = "";
-                CnPassword.Text = "";
+                Password.Password = "";
+                CnPassword.Password = "";
                 Email.Text = "";
 
                 ok.Visibility = Visibility.Hidden;
@@ -102,17 +96,54 @@ namespace RegistrForm
 
         private void ok_Click(object sender, RoutedEventArgs e)
         {
-            string writePath = @"C:\Users\Рома\Desktop\Step\WPF\RegistrForm\RegistrForm\txt.txt";
-
-                using (StreamWriter sw = new StreamWriter(writePath, false, System.Text.Encoding.Default))
+            if (check_user)
+            {
+                user.login = login.Text;
+                if (Password.Password == CnPassword.Password)
                 {
-                    sw.WriteLine(login.Text);
-                    sw.WriteLine(Password.Text);
-                    sw.WriteLine(Email.Text);
-                Skreen.Content = "DOne";
+                    user.password = Password.Password;
+                    user.email = Email.Text;
+                    users.Add(user);
+
+                    XmlSerializer formatter = new XmlSerializer(typeof(List<User>));
+                    using (FileStream fs = new FileStream("user.xml", FileMode.Create, FileAccess.Write))
+                    {
+                        formatter.Serialize(fs, users);
+
+                        Skreen.Content = "user in the base";
+                    }
                 }
+                else
+                    Skreen.Content = "Password not corect";
+            }
+            else
+            {
+            //   if( users.Find(search) != null)
+               if( users.Find((x) => x.login == login.Text && x.password == Password.Password) != null)
 
+                    Skreen.Content = "Welcome User";
+               else
+                    Skreen.Content = "You have to registration";
+            }
+        }
 
+        private bool search(User x)
+        {
+            if (x.login == login.Text && x.password == Password.Password)
+                return true;
+            return false;
+
+         //   return (x.login == login.Text && x.password == Password.Password);
+        }
+        private void load()
+        {
+            if (!File.Exists("user.xml"))
+                return;
+            XmlSerializer formatter = new XmlSerializer(typeof(List<User>));
+            using (FileStream fs = new FileStream("user.xml", FileMode.Open, FileAccess.Read))
+            {
+                users = (List<User>)formatter.Deserialize(fs);
+            }
         }
     }
 }
