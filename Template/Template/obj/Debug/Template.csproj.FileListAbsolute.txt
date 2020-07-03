@@ -1,0 +1,15 @@
+C:\Users\Рома\Desktop\Step\WPF\Template\Template\bin\Debug\Template.exe.config
+C:\Users\Рома\Desktop\Step\WPF\Template\Template\bin\Debug\Template.exe
+C:\Users\Рома\Desktop\Step\WPF\Template\Template\bin\Debug\Template.pdb
+C:\Users\Рома\Desktop\Step\WPF\Template\Template\obj\Debug\Template.csprojAssemblyReference.cache
+C:\Users\Рома\Desktop\Step\WPF\Template\Template\obj\Debug\MainWindow.g.cs
+C:\Users\Рома\Desktop\Step\WPF\Template\Template\obj\Debug\App.g.cs
+C:\Users\Рома\Desktop\Step\WPF\Template\Template\obj\Debug\Template_MarkupCompile.cache
+C:\Users\Рома\Desktop\Step\WPF\Template\Template\obj\Debug\Template_MarkupCompile.lref
+C:\Users\Рома\Desktop\Step\WPF\Template\Template\obj\Debug\MainWindow.baml
+C:\Users\Рома\Desktop\Step\WPF\Template\Template\obj\Debug\Template.g.resources
+C:\Users\Рома\Desktop\Step\WPF\Template\Template\obj\Debug\Template.Properties.Resources.resources
+C:\Users\Рома\Desktop\Step\WPF\Template\Template\obj\Debug\Template.csproj.GenerateResource.cache
+C:\Users\Рома\Desktop\Step\WPF\Template\Template\obj\Debug\Template.csproj.CoreCompileInputs.cache
+C:\Users\Рома\Desktop\Step\WPF\Template\Template\obj\Debug\Template.exe
+C:\Users\Рома\Desktop\Step\WPF\Template\Template\obj\Debug\Template.pdb
